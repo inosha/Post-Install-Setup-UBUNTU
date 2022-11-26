@@ -51,11 +51,11 @@ vi /etc/netdata/netdata.conf
   systemctl enable NetworkManager && systemctl start NetworkManager
 
   vi /etc/netplan/50-cloud-init.yaml
-
+```
   network:
       version: 2
       renderer: NetworkManager
-
+```
 ***
 
 #### disk expand
