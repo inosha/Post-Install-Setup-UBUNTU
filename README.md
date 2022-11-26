@@ -46,3 +46,7 @@ vi /etc/netdata/netdata.conf
   growpart /dev/xvda 1  # Grows the partition; note the space
   
   resize2fs /dev/xvda1  # Grows the filesystem
+  
+
+#### view public ip addresses
+curl ifconfig.io -4 # -4 for ipv6 -6 for ipv6
