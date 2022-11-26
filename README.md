@@ -19,6 +19,7 @@ blacklist {
  usermod -aG sudo USERNAME
  
 #### 4. netplan - static configuration
+```
 
   network:
       ethernets:
@@ -32,12 +33,12 @@ blacklist {
                 addresses:
                 - 1.1.1.3
       version: 2
+```
+
 #### 5 netdata monitring (optional)
 
 apt install netdata
 vi /etc/netdata/netdata.conf
-
-
 
 #### 6.  SSH login as root user (optional)
 
@@ -48,6 +49,7 @@ vi /etc/netdata/netdata.conf
 #### 7. NMTUI Network Setup (optional)
 
   apt install network-manager
+  
   systemctl enable NetworkManager && systemctl start NetworkManager
 
   vi /etc/netplan/50-cloud-init.yaml
