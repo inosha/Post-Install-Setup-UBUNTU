@@ -14,11 +14,10 @@ blacklist {
     devnode "^(ram|raw|loop|fd|md|dm-|sr|scd|st|sda)[0-9]*"
 }
 
-#### 3. netdata monitring (optional)
+#### 3. assign sudo privileges to a user
 
-apt install netdata
-vi /etc/netdata/netdata.conf
-
+ usermod -aG sudo USERNAME
+ 
 #### 4. netplan - static configuration
 
   network:
@@ -33,8 +32,14 @@ vi /etc/netdata/netdata.conf
                 addresses:
                 - 1.1.1.3
       version: 2
+#### 5 netdata monitring (optional)
 
-#### 5.  SSH login as root user (optional)
+apt install netdata
+vi /etc/netdata/netdata.conf
+
+
+
+#### 6.  SSH login as root user (optional)
 
      sed -i --follow-symlinks 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 
