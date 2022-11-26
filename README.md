@@ -46,7 +46,7 @@ vi /etc/netdata/netdata.conf
 
     service ssh restart
   
-#### 7. NMTUI Network Setup (optional)
+#### 7. NMTUI Network Setup (optional) require for cockpit 
 
   apt install network-manager
   
