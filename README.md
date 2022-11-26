@@ -1,23 +1,25 @@
 # Post-Install-Setup-UBUNTU
 
-1. time zone adjustment:
+####1. time zone adjustment:
 
   timedatectl set-timezone 'Asia/Colombo' && dpkg-reconfigure --frontend noninteractive 
 
   tzdata
 
-2. sda continuous errors:
+####2. sda continuous errors:
+
 vi /etc/multipath.conf
 i
 blacklist {
     devnode "^(ram|raw|loop|fd|md|dm-|sr|scd|st|sda)[0-9]*"
 }
 
-3. netdata monitring (optional)
+####3. netdata monitring (optional)
+
 apt install netdata
 vi /etc/netdata/netdata.conf
 
-4. netplan - static configuration
+####4. netplan - static configuration
 
 network:
     ethernets:
@@ -32,7 +34,7 @@ network:
               - 1.1.1.3
     version: 2
 
-5.  SSH login as root user (optional)
+####5.  SSH login as root user (optional)
 
    sed -i --follow-symlinks 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 
@@ -40,6 +42,6 @@ network:
   
 ***
 
-###disk expand
+####disk expand
 growpart /dev/xvda 1  # Grows the partition; note the space
 resize2fs /dev/xvda1  # Grows the filesystem
