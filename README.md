@@ -45,6 +45,17 @@ vi /etc/netdata/netdata.conf
 
     service ssh restart
   
+#### 7. NMTUI Network Setup (optional)
+
+  apt install network-manager
+  systemctl enable NetworkManager && systemctl start NetworkManager
+
+  vi /etc/netplan/50-cloud-init.yaml
+
+  network:
+      version: 2
+      renderer: NetworkManager
+
 ***
 
 #### disk expand
