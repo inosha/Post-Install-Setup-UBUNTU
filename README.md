@@ -58,11 +58,11 @@ vi /etc/netdata/netdata.conf
       version: 2
       renderer: NetworkManager
 ```
-#### 8.  User privilege specification: sudo command without a password
+#### 8.  sudo command without a password
 
 Backing up existing: ``` cp /etc/sudoers /root/sudoers.bak ```
 
-giving systemctl : 
+sudo systemctl commands without password: 
 visudo
 ```userid ALL = NOPASSWD: /bin/systemctl restart httpd.service, /bin/kill```
 
